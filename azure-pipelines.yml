@@ -26,7 +26,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    path: $(System.DefaultWorkingDirectory)/bin/WebApp
+    path: $(System.DefaultWorkingDirectory)/bin/Debug/netcoreapp3.1
     artifact: WebApp
 
 - task: DownloadPipelineArtifact@2
