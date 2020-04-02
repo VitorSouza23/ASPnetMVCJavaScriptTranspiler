@@ -24,11 +24,9 @@ steps:
     command: 'build'
     projects: '**/*.csproj'
 
-- task: PublishPipelineArtifact@1
+- task: DownloadBuildArtifacts@0
   inputs:
-    path: $(System.DefaultWorkingDirectory)/bin/Debug/netcoreapp3.1
-    artifact: WebApp
-
-- task: DownloadPipelineArtifact@2
-  inputs:
-    artifact: WebApp
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'TesteDeploy'
+    downloadPath: '$(System.ArtifactsDirectory)'
